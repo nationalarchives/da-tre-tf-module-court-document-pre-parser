@@ -7,6 +7,12 @@ resource "aws_lambda_function" "court_document_pre_parser" {
   timeout       = 30
   memory_size   = 1024
 
+  environment {
+    variables = {
+      "ENV_PREFIX" = var.env
+    }
+  }
+
   tracing_config {
     mode = "Active"
   }
