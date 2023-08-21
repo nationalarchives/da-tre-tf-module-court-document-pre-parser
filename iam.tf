@@ -10,19 +10,19 @@ data "aws_iam_policy_document" "lambda_assume_role_policy" {
   }
 }
 
-resource "aws_iam_role" "bag_pre_parser_role" {
-  name               = "${var.env}-${var.prefix}-bag-pre-parser-lambda-role"
+resource "aws_iam_role" "court_document_pre_parser_role" {
+  name               = "${var.env}-${var.prefix}-court_document-pre-parser-lambda-role"
   assume_role_policy = data.aws_iam_policy_document.lambda_assume_role_policy.json
   permissions_boundary = var.tre_permission_boundary_arn
 }
 
-resource "aws_iam_role_policy_attachment" "bag_pre_parser_lambda_logs" {
-  role       = aws_iam_role.bag_pre_parser_role.name
+resource "aws_iam_role_policy_attachment" "court_document_pre_parser_lambda_logs" {
+  role       = aws_iam_role.court_document_pre_parser_role.name
   policy_arn = "arn:aws:iam::aws:policy/AWSOpsWorksCloudWatchLogs"
 }
 
 resource "aws_iam_role_policy_attachment" "invoke_success_failure_destination_lambdas" {
-  role       = aws_iam_role.bag_pre_parser_role.name
+  role       = aws_iam_role.court_document_pre_parser_role.name
   policy_arn = aws_iam_policy.pre_parser_lambda_invoke_policy.arn
 }
 

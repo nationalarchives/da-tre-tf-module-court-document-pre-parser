@@ -23,10 +23,10 @@ variable "tre_internal_topic_arn" {
   type = string
 }
 
-variable "bag_pre_parse_image_versions" {
-  description = "Latest version of Images for the bag pre parse Lambda Functions"
+variable "court_document_pre_parse_image_versions" {
+  description = "Latest version of Images for the court document pre parse Lambda Functions"
   type = object({
-    tre_bag_parse = string
+    tre_court_document_parse = string
   })
 }
 
