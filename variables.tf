@@ -26,7 +26,7 @@ variable "tre_internal_topic_arn" {
 variable "court_document_pre_parse_image_versions" {
   description = "Latest version of Images for the court document pre parse Lambda Functions"
   type = object({
-    tre_court_document_parse = string
+    tre_court_document_pre_parse = string
   })
 }
 
