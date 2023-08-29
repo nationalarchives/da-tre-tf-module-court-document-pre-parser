@@ -1,6 +1,6 @@
 # Court Document Pre Parser Lambda
 resource "aws_lambda_function" "court_document_pre_parser" {
-  image_uri     = "${var.ecr_uri_host}/${var.ecr_uri_repo_prefix}da-tre-fn-court_document-pre-parser:${var.court_document_pre_parse_image_versions.tre_court_document_pre_parse}"
+  image_uri     = "${var.ecr_uri_host}/${var.ecr_uri_repo_prefix}da-tre-fn-court-document-pre-parser:${var.court_document_pre_parse_image_versions.tre_court_document_pre_parse}"
   package_type  = "Image"
   function_name = "${var.env}-${var.prefix}-court_document-pre-parser"
   role          = aws_iam_role.court_document_pre_parser_role.arn
