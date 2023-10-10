@@ -18,8 +18,8 @@ variable "tre_permission_boundary_arn" {
   type = string
 }
 
-variable "source_topic_arn" {
-  description = "ARN of the lamda source sns topic"
+variable "message_source_arn" {
+  description = "ARN of the lambda source sns topic"
   type = string
 }
 
